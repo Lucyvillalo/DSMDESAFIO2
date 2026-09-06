@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/background_light">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="RESULTADOS" android:textColor="@color/primary" android:textStyle="bold" android:textSize="14sp" />
+        <TextView android:id="@+id/txtResultTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textColor="@color/black" android:textSize="28sp" android:textStyle="bold" />
+        <TextView android:id="@+id/txtScore" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:gravity="center" android:padding="24dp" android:background="@drawable/result_card" android:textColor="@color/white" android:textSize="23sp" android:textStyle="bold" />
+        <TextView android:id="@+id/txtFeedback" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:gravity="center" android:textColor="@color/primary_variant" android:textSize="18sp" android:textStyle="italic" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="28dp" android:text="Revisión de respuestas" android:textColor="@color/black" android:textSize="20sp" android:textStyle="bold" />
+        <LinearLayout android:id="@+id/reviewContainer" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="vertical" android:background="@color/white" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnTryAgain" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="Intentar de nuevo" android:textAllCaps="false" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnChooseOther" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:backgroundTint="@color/white" app:strokeColor="@color/primary" app:strokeWidth="1dp" android:text="Elegir otro quiz" android:textAllCaps="false" android:textColor="@color/primary" />
+    </LinearLayout>
+</ScrollView>

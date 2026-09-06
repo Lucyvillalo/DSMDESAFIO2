@@ -13,13 +13,8 @@ import com.google.firebase.auth.FirebaseAuth
 
 class RegisterActivity : AppCompatActivity() {
 
-    // Referencia del objeto FirebaseAuth
     private lateinit var auth: FirebaseAuth
-
-    // Listener para verificar si ya existe una sesión activa
     private lateinit var authStateListener: FirebaseAuth.AuthStateListener
-
-    // Referencia a componentes del layout
     private lateinit var txtEmail: EditText
     private lateinit var txtPassword: EditText
     private lateinit var txtPasswordConfirm: EditText
@@ -54,7 +49,6 @@ class RegisterActivity : AppCompatActivity() {
             goToLogin()
         }
 
-        // Verificación de sesión: si ya hay un usuario autenticado, saltar directo a Welcome
         authStateListener = FirebaseAuth.AuthStateListener { firebaseAuth ->
             if (firebaseAuth.currentUser != null) {
                 goToWelcome()
@@ -72,7 +66,6 @@ class RegisterActivity : AppCompatActivity() {
         auth.removeAuthStateListener(authStateListener)
     }
 
-    // Valida los datos ingresados antes de enviarlos a Firebase.
     private fun validar(email: String, password: String, passwordConfirm: String): Boolean {
         if (email.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             Toast.makeText(this, "Ingresa un correo electrónico válido", Toast.LENGTH_LONG).show()

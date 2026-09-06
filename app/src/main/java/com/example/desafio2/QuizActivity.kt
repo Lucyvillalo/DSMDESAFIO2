@@ -9,7 +9,6 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 class QuizActivity : AppCompatActivity() {
@@ -107,11 +106,7 @@ class QuizActivity : AppCompatActivity() {
             respuesta == preguntas[indice].correctIndex
         }
 
-        AlertDialog.Builder(this)
-            .setTitle("Quiz finalizado")
-            .setMessage("Obtuviste $puntaje de ${preguntas.size} respuestas correctas.")
-            .setPositiveButton("Aceptar", null)
-            .show()
+        startActivity(ResultActivity.intent(this, tipo, dificultad, respuestasSeleccionadas, puntaje))
     }
 
     private fun reiniciarQuiz() {
@@ -140,5 +135,11 @@ class QuizActivity : AppCompatActivity() {
     companion object {
         const val EXTRA_TIPO = "extra_tipo"
         const val EXTRA_DIFICULTAD = "extra_dificultad"
+
+        fun intent(context: android.content.Context, tipo: String, dificultad: String) =
+            android.content.Intent(context, QuizActivity::class.java).apply {
+                putExtra(EXTRA_TIPO, tipo)
+                putExtra(EXTRA_DIFICULTAD, dificultad)
+            }
     }
 }
