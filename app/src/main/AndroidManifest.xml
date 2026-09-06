@@ -20,7 +20,6 @@
         <activity android:name=".LoginActivity" android:exported="false" />
         <activity android:name=".WelcomeActivity" android:exported="false" />
         <activity android:name=".QuizActivity" android:exported="false" />
-        <activity android:name=".ResultActivity" android:exported="false" />
 
     </application>
 
